@@ -53,7 +53,7 @@ go get -u github.com/counterapi/counter
 ```
 
 ```shell
-bw-ssh add --name my-server-1 --private-key $PK_PATH --public-key $PUB_KEY
+counter up --name MyCounter
 ```
 
 ## Improvements to be made
