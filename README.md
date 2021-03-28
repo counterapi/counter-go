@@ -61,3 +61,6 @@ counter up --name MyCounter
 * 100% test coverage.
 * Better covering for other features.
 
+## License
+
+[MIT](https://github.com/counterapi/counter/blob/master/LICENSE)
