@@ -3,7 +3,7 @@ ARG FROM_IMAGE=alpine:3.12
 
 FROM golang:${GO_VERSION} AS builder
 
-LABEL org.opencontainers.image.source="https://github.com/counterapi/counter-go"
+LABEL org.opencontainers.image.source="https://github.com/counterapi/counter"
 
 WORKDIR /app
 

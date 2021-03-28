@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/counterapi/counter-go/cmd"
+	"github.com/counterapi/counter/cmd"
 
 	"github.com/spf13/cobra"
 )

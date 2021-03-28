@@ -2,9 +2,10 @@ package counter
 
 import (
 	"encoding/json"
-	"github.com/counterapi/counter/pkg/models"
 	"net/http"
 	"net/url"
+
+	"github.com/counterapi/counterapi/pkg/models"
 )
 
 // Counter is a struct for Counter communication.

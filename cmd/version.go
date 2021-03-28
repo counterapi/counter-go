@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/counterapi/counter-go/pkg/info"
+	"github.com/counterapi/counter/pkg/info"
 
 	"github.com/spf13/cobra"
 )
