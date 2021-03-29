@@ -118,6 +118,27 @@ func (a *Counter) Counts(options CountOptions) ([]models.CountGroupResult, error
 	return counts, nil
 }
 
+// Set sets counter.
+func (a *Counter) Set(name string, count string) (models.Counter, error) {
+	params := url.Values{}
+	params.Add("name", name)
+	params.Add("count", count)
+
+	req, err := a.newRequest("set", params)
+	if err != nil {
+		return models.Counter{}, err
+	}
+
+	var counter models.Counter
+
+	_, err = a.do(req, &counter)
+	if err != nil {
+		return models.Counter{}, err
+	}
+
+	return counter, nil
+}
+
 // newRequest created new request.
 func (a *Counter) newRequest(path string, params url.Values) (*http.Request, error) {
 	rel := &url.URL{Path: path}

@@ -20,6 +20,7 @@ func RootCommand() *cobra.Command {
 	root.AddCommand(cmd.Down())
 	root.AddCommand(cmd.Get())
 	root.AddCommand(cmd.Counts())
+	root.AddCommand(cmd.Set())
 
 	return root
 }

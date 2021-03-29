@@ -27,6 +27,7 @@ Available Commands:
   down        Count down for given name
   get         Fetches counter information
   help        Help about any command
+  set         Sets counter
   up          Count up for given name
   version     Print the version/build number
 
@@ -34,6 +35,7 @@ Flags:
   -h, --help   help for counter
 
 Use "counter [command] --help" for more information about a command.
+
 ```
 
 ## Requirements
