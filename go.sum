@@ -1,5 +1,7 @@
 github.com/counterapi/api v0.58.0 h1:1NSF0DgD7+Futz1xYjYfVW0snFK2vITbELibAKwZpLQ=
 github.com/counterapi/api v0.58.0/go.mod h1:YnW9s7YAhAdnAx4JmFu3SyR+hlT8GKH+VLoUjBFyvaI=
+github.com/counterapi/api v0.59.0 h1:32KXG75xtlPw1tv/+QwA7LAB8yqDhVvSR6iHJV48fyw=
+github.com/counterapi/api v0.59.0/go.mod h1:YnW9s7YAhAdnAx4JmFu3SyR+hlT8GKH+VLoUjBFyvaI=
 github.com/cpuguy83/go-md2man/v2 v2.0.2/go.mod h1:tgQtvFlXSQOSOSIRvRPT7W67SCa46tRHOmNcaadrF8o=
 github.com/inconshreveable/mousetrap v1.1.0 h1:wN+x4NVGpMsO7ErUn/mUI3vEoE6Jt13X2s0bqwp9tc8=
 github.com/inconshreveable/mousetrap v1.1.0/go.mod h1:vpF70FUmC8bwa3OWnCshd2FqLfsEA9PFc4w1p2J65bw=
