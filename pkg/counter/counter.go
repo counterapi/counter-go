@@ -2,10 +2,11 @@ package counter
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"net/url"
 
-	"github.com/counterapi/counterapi/pkg/models"
+	"github.com/counterapi/api/pkg/models"
 )
 
 // Counter is a struct for Counter communication.
@@ -17,9 +18,10 @@ type Counter struct {
 
 // CountOptions is options for counts.
 type CountOptions struct {
-	Name    string
-	GroupBy string
-	OrderBy string
+	Namespace string
+	Name      string
+	GroupBy   string
+	OrderBy   string
 }
 
 // NewCounter returns Counter struct.
@@ -37,11 +39,8 @@ func NewCounter() Counter {
 }
 
 // Up counts up.
-func (a *Counter) Up(name string) (models.Counter, error) {
-	params := url.Values{}
-	params.Add("name", name)
-
-	req, err := a.newRequest("up", params)
+func (a *Counter) Up(namespace, name string) (models.Counter, error) {
+	req, err := a.newRequest(fmt.Sprintf("%s/%s/up", namespace, name), url.Values{})
 	if err != nil {
 		return models.Counter{}, err
 	}
@@ -57,11 +56,8 @@ func (a *Counter) Up(name string) (models.Counter, error) {
 }
 
 // Down counts down.
-func (a *Counter) Down(name string) (models.Counter, error) {
-	params := url.Values{}
-	params.Add("name", name)
-
-	req, err := a.newRequest("down", params)
+func (a *Counter) Down(namespace, name string) (models.Counter, error) {
+	req, err := a.newRequest(fmt.Sprintf("%s/%s/down", namespace, name), url.Values{})
 	if err != nil {
 		return models.Counter{}, err
 	}
@@ -77,11 +73,8 @@ func (a *Counter) Down(name string) (models.Counter, error) {
 }
 
 // Get fetch counter information.
-func (a *Counter) Get(name string) (models.Counter, error) {
-	params := url.Values{}
-	params.Add("name", name)
-
-	req, err := a.newRequest("get", params)
+func (a *Counter) Get(namespace, name string) (models.Counter, error) {
+	req, err := a.newRequest(fmt.Sprintf("%s/%s", namespace, name), url.Values{})
 	if err != nil {
 		return models.Counter{}, err
 	}
@@ -99,11 +92,10 @@ func (a *Counter) Get(name string) (models.Counter, error) {
 // Counts fetch count list of given counter.
 func (a *Counter) Counts(options CountOptions) ([]models.CountGroupResult, error) {
 	params := url.Values{}
-	params.Add("name", options.Name)
 	params.Add("group_by", options.GroupBy)
 	params.Add("order_by", options.OrderBy)
 
-	req, err := a.newRequest("counts", params)
+	req, err := a.newRequest(fmt.Sprintf("%s/%s/list", options.Namespace, options.Name), url.Values{})
 	if err != nil {
 		return []models.CountGroupResult{}, err
 	}
@@ -119,12 +111,11 @@ func (a *Counter) Counts(options CountOptions) ([]models.CountGroupResult, error
 }
 
 // Set sets counter.
-func (a *Counter) Set(name string, count string) (models.Counter, error) {
+func (a *Counter) Set(namespace, name string, count string) (models.Counter, error) {
 	params := url.Values{}
-	params.Add("name", name)
 	params.Add("count", count)
 
-	req, err := a.newRequest("set", params)
+	req, err := a.newRequest(fmt.Sprintf("%s/%s/set", namespace, name), params)
 	if err != nil {
 		return models.Counter{}, err
 	}

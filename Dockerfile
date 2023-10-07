@@ -1,9 +1,9 @@
-ARG GO_VERSION=1.15-alpine3.12
-ARG FROM_IMAGE=alpine:3.12
+ARG GO_VERSION=1.21-alpine3.18
+ARG FROM_IMAGE=alpine:3.18
 
 FROM golang:${GO_VERSION} AS builder
 
-LABEL org.opencontainers.image.source="https://github.com/counterapi/counter"
+LABEL org.opencontainers.image.source="https://github.com/counterapi/counter-go"
 
 WORKDIR /app
 

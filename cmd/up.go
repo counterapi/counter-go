@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/counterapi/counter/pkg/counter"
 
@@ -14,11 +15,12 @@ func Up() *cobra.Command {
 		Use:   "up",
 		Short: "Count up for given name",
 		RunE: func(cmd *cobra.Command, args []string) error {
+			namespace, _ := cmd.Flags().GetString("namespace")
 			name, _ := cmd.Flags().GetString("name")
 
 			c := counter.NewCounter()
 
-			resp, err := c.Up(name)
+			resp, err := c.Up(namespace, name)
 			if err != nil {
 				return err
 			}
@@ -29,8 +31,14 @@ func Up() *cobra.Command {
 		},
 	}
 
-	cmd.Flags().String("name", "", "Name")
-	_ = cmd.MarkFlagRequired("name")
+	cmd.Flags().String("namespace", "", "Namespace")
+	if err := cmd.MarkFlagRequired("namespace"); err != nil {
+		log.Fatalf("Lethal damage: %s\n\n", err)
+	}
 
+	cmd.Flags().String("name", "", "Name")
+	if err := cmd.MarkFlagRequired("name"); err != nil {
+		log.Fatalf("Lethal damage: %s\n\n", err)
+	}
 	return cmd
 }

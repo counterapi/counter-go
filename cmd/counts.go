@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/counterapi/counter/pkg/counter"
 
@@ -14,6 +15,7 @@ func Counts() *cobra.Command {
 		Use:   "counts",
 		Short: "Fetches counts of counter",
 		RunE: func(cmd *cobra.Command, args []string) error {
+			namespace, _ := cmd.Flags().GetString("namespace")
 			name, _ := cmd.Flags().GetString("name")
 			groupBy, _ := cmd.Flags().GetString("group-by")
 			orderBy, _ := cmd.Flags().GetString("order-by")
@@ -21,9 +23,10 @@ func Counts() *cobra.Command {
 			c := counter.NewCounter()
 
 			options := counter.CountOptions{
-				Name:    name,
-				GroupBy: groupBy,
-				OrderBy: orderBy,
+				Name:      name,
+				Namespace: namespace,
+				GroupBy:   groupBy,
+				OrderBy:   orderBy,
 			}
 
 			resp, err := c.Counts(options)
@@ -37,11 +40,20 @@ func Counts() *cobra.Command {
 		},
 	}
 
+	cmd.Flags().String("namespace", "", "Namespace")
+	if err := cmd.MarkFlagRequired("namespace"); err != nil {
+		log.Fatalf("Lethal damage: %s\n\n", err)
+	}
+
 	cmd.Flags().String("name", "", "Name")
-	_ = cmd.MarkFlagRequired("name")
+	if err := cmd.MarkFlagRequired("name"); err != nil {
+		log.Fatalf("Lethal damage: %s\n\n", err)
+	}
 
 	cmd.Flags().String("group-by", "", "Group by count list")
-	_ = cmd.MarkFlagRequired("group-by")
+	if err := cmd.MarkFlagRequired("group-by"); err != nil {
+		log.Fatalf("Lethal damage: %s\n\n", err)
+	}
 
 	cmd.Flags().String("order-by", "", "Order by count list")
 

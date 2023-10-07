@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/counterapi/counter/pkg/counter"
 
@@ -14,11 +15,12 @@ func Get() *cobra.Command {
 		Use:   "get",
 		Short: "Fetches counter information",
 		RunE: func(cmd *cobra.Command, args []string) error {
+			namespace, _ := cmd.Flags().GetString("namespace")
 			name, _ := cmd.Flags().GetString("name")
 
 			c := counter.NewCounter()
 
-			resp, err := c.Get(name)
+			resp, err := c.Get(namespace, name)
 			if err != nil {
 				return err
 			}
@@ -29,8 +31,15 @@ func Get() *cobra.Command {
 		},
 	}
 
+	cmd.Flags().String("namespace", "", "Namespace")
+	if err := cmd.MarkFlagRequired("namespace"); err != nil {
+		log.Fatalf("Lethal damage: %s\n\n", err)
+	}
+
 	cmd.Flags().String("name", "", "Name")
-	_ = cmd.MarkFlagRequired("name")
+	if err := cmd.MarkFlagRequired("name"); err != nil {
+		log.Fatalf("Lethal damage: %s\n\n", err)
+	}
 
 	return cmd
 }

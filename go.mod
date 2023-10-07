@@ -1,9 +1,15 @@
 module github.com/counterapi/counter
 
-go 1.16
+go 1.21
+
+toolchain go1.21.0
 
 require (
-	github.com/counterapi/counterapi v0.7.0
-	github.com/spf13/cobra v1.1.3
-	golang.org/x/sys v0.0.0-20210326220804-49726bf1d181 // indirect
+	github.com/counterapi/api v0.58.0
+	github.com/spf13/cobra v1.7.0
+)
+
+require (
+	github.com/inconshreveable/mousetrap v1.1.0 // indirect
+	github.com/spf13/pflag v1.0.5 // indirect
 )
