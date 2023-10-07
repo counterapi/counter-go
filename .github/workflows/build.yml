@@ -67,6 +67,6 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: ghcr.io/counterapi/api:latest,ghcr.io/counterapi/api:${{ needs.release.outputs.new_tag }}
+          tags: ghcr.io/counterapi/counter-go:latest,ghcr.io/counterapi/counter-go:${{ needs.release.outputs.new_tag }}
           platforms: linux/amd64,linux/arm64
           build-args: VERSION=${{ needs.release.outputs.new_tag }}
