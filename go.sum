@@ -44,6 +44,8 @@ github.com/counterapi/api v0.79.0 h1:xwchSyF9j89CQtW9N7Pd5mjnbYexXA3Fr5uGba6Fe0A
 github.com/counterapi/api v0.79.0/go.mod h1:xZzeuUMn1OZ5r8SwudcoYgS7kAE08HhjxVBEW3RVCe0=
 github.com/counterapi/api v0.80.0 h1:voyJIo32jMXmCgiUI2+8GIN3AKZo+w/hfJc8CBOjON4=
 github.com/counterapi/api v0.80.0/go.mod h1:xZzeuUMn1OZ5r8SwudcoYgS7kAE08HhjxVBEW3RVCe0=
+github.com/counterapi/api v0.81.0 h1:X5XqhT0dw3rvx/YX3AeKLdi2kfGM0VncFU+Fq9wW2GE=
+github.com/counterapi/api v0.81.0/go.mod h1:xZzeuUMn1OZ5r8SwudcoYgS7kAE08HhjxVBEW3RVCe0=
 github.com/cpuguy83/go-md2man/v2 v2.0.2/go.mod h1:tgQtvFlXSQOSOSIRvRPT7W67SCa46tRHOmNcaadrF8o=
 github.com/cpuguy83/go-md2man/v2 v2.0.3/go.mod h1:tgQtvFlXSQOSOSIRvRPT7W67SCa46tRHOmNcaadrF8o=
 github.com/inconshreveable/mousetrap v1.1.0 h1:wN+x4NVGpMsO7ErUn/mUI3vEoE6Jt13X2s0bqwp9tc8=
