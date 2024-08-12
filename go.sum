@@ -90,6 +90,8 @@ github.com/counterapi/api v0.106.0 h1:gRcMmBpWOqXy0XiXa3hX6di1mGQMcF1syNkx7mmPES
 github.com/counterapi/api v0.106.0/go.mod h1:6jj8yilRUL3yL2cGzVS9Nx2PTtLvIhDlp8RXLAEI4qE=
 github.com/counterapi/api v0.107.0 h1:RdfA+7OJOrDFt9g0uGhK1QWTDxTfVkLsppyus/0Zojc=
 github.com/counterapi/api v0.107.0/go.mod h1:6jj8yilRUL3yL2cGzVS9Nx2PTtLvIhDlp8RXLAEI4qE=
+github.com/counterapi/api v0.108.0 h1:btVp+TrYgckm47S7S/9gMKhWDLh3bsqG7bTtietzULE=
+github.com/counterapi/api v0.108.0/go.mod h1:6jj8yilRUL3yL2cGzVS9Nx2PTtLvIhDlp8RXLAEI4qE=
 github.com/cpuguy83/go-md2man/v2 v2.0.2/go.mod h1:tgQtvFlXSQOSOSIRvRPT7W67SCa46tRHOmNcaadrF8o=
 github.com/cpuguy83/go-md2man/v2 v2.0.3/go.mod h1:tgQtvFlXSQOSOSIRvRPT7W67SCa46tRHOmNcaadrF8o=
 github.com/cpuguy83/go-md2man/v2 v2.0.4/go.mod h1:tgQtvFlXSQOSOSIRvRPT7W67SCa46tRHOmNcaadrF8o=
