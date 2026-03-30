@@ -3,7 +3,7 @@ module github.com/counterapi/counter
 go 1.24.3
 
 require (
-	github.com/counterapi/api v0.198.0
+	github.com/counterapi/api v0.199.0
 	github.com/spf13/cobra v1.10.2
 )
 
